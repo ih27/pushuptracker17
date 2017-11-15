@@ -9,7 +9,19 @@
 import Foundation
 
 class Persistance {
+    static let sharedInstance = Persistance()
+    
+    private init() {
+        
+    }
+    
     let workoutsKey = "workouts"
+    
+    func fetchBestWorkout() -> Workout? {
+        let workouts = fetchWorkouts()
+        let sortedWorkouts = workouts.sorted(by: { $0.pushupsCompleted > $1.pushupsCompleted })
+        return sortedWorkouts.first
+    }
     
     func fetchWorkouts() -> [Workout] {
         let userDefaults = UserDefaults.standard

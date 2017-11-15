@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D011DA141FB1345A002F95D7 /* ScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011DA131FB1345A002F95D7 /* ScoresTableViewController.swift */; };
 		D01CBF471FA7E43200CC8780 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01CBF461FA7E43200CC8780 /* Workout.swift */; };
 		D01CBF4D1FA7E72300CC8780 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01CBF4C1FA7E72300CC8780 /* Persistance.swift */; };
+		D08209931FBA634F00A1A6A3 /* Gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08209921FBA634F00A1A6A3 /* Gym.swift */; };
+		D08209951FBA651400A1A6A3 /* GymFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08209941FBA651400A1A6A3 /* GymFinder.swift */; };
+		D08209971FBA6DDC00A1A6A3 /* GymsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08209961FBA6DDC00A1A6A3 /* GymsTableViewController.swift */; };
+		D08209991FBA79A300A1A6A3 /* GymTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08209981FBA79A300A1A6A3 /* GymTableViewCell.swift */; };
+		D082099B1FBA7CE400A1A6A3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D082099A1FBA7CE400A1A6A3 /* UIImageViewExtension.swift */; };
 		D098058A1F9580740052551A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09805891F9580740052551A /* AppDelegate.swift */; };
-		D098058C1F9580740052551A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D098058B1F9580740052551A /* ViewController.swift */; };
+		D098058C1F9580740052551A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D098058B1F9580740052551A /* MenuViewController.swift */; };
 		D098058F1F9580740052551A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D098058D1F9580740052551A /* Main.storyboard */; };
 		D09805911F9580740052551A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D09805901F9580740052551A /* Assets.xcassets */; };
 		D09805941F9580740052551A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09805921F9580740052551A /* LaunchScreen.storyboard */; };
@@ -18,11 +24,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D011DA131FB1345A002F95D7 /* ScoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresTableViewController.swift; sourceTree = "<group>"; };
 		D01CBF461FA7E43200CC8780 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		D01CBF4C1FA7E72300CC8780 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
+		D08209921FBA634F00A1A6A3 /* Gym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gym.swift; sourceTree = "<group>"; };
+		D08209941FBA651400A1A6A3 /* GymFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymFinder.swift; sourceTree = "<group>"; };
+		D08209961FBA6DDC00A1A6A3 /* GymsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymsTableViewController.swift; sourceTree = "<group>"; };
+		D08209981FBA79A300A1A6A3 /* GymTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymTableViewCell.swift; sourceTree = "<group>"; };
+		D082099A1FBA7CE400A1A6A3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		D09805861F9580740052551A /* pushuptracker17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pushuptracker17.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09805891F9580740052551A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D098058B1F9580740052551A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D098058B1F9580740052551A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D098058E1F9580740052551A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D09805901F9580740052551A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D09805931F9580740052551A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,8 +56,10 @@
 		D01CBF481FA7E67900CC8780 /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D098058B1F9580740052551A /* ViewController.swift */,
+				D098058B1F9580740052551A /* MenuViewController.swift */,
 				D0E88B8D1F9EBF7400F1E30E /* PushUpViewController.swift */,
+				D011DA131FB1345A002F95D7 /* ScoresTableViewController.swift */,
+				D08209961FBA6DDC00A1A6A3 /* GymsTableViewController.swift */,
 			);
 			path = "view controllers";
 			sourceTree = "<group>";
@@ -56,6 +70,7 @@
 				D098058D1F9580740052551A /* Main.storyboard */,
 				D09805901F9580740052551A /* Assets.xcassets */,
 				D09805921F9580740052551A /* LaunchScreen.storyboard */,
+				D08209981FBA79A300A1A6A3 /* GymTableViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -64,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				D01CBF461FA7E43200CC8780 /* Workout.swift */,
+				D08209921FBA634F00A1A6A3 /* Gym.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -72,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				D01CBF4C1FA7E72300CC8780 /* Persistance.swift */,
+				D08209941FBA651400A1A6A3 /* GymFinder.swift */,
+				D082099A1FBA7CE400A1A6A3 /* UIImageViewExtension.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -177,11 +195,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D098058C1F9580740052551A /* ViewController.swift in Sources */,
+				D098058C1F9580740052551A /* MenuViewController.swift in Sources */,
 				D098058A1F9580740052551A /* AppDelegate.swift in Sources */,
+				D011DA141FB1345A002F95D7 /* ScoresTableViewController.swift in Sources */,
 				D0E88B8E1F9EBF7400F1E30E /* PushUpViewController.swift in Sources */,
+				D08209971FBA6DDC00A1A6A3 /* GymsTableViewController.swift in Sources */,
+				D08209931FBA634F00A1A6A3 /* Gym.swift in Sources */,
+				D082099B1FBA7CE400A1A6A3 /* UIImageViewExtension.swift in Sources */,
 				D01CBF4D1FA7E72300CC8780 /* Persistance.swift in Sources */,
+				D08209991FBA79A300A1A6A3 /* GymTableViewCell.swift in Sources */,
 				D01CBF471FA7E43200CC8780 /* Workout.swift in Sources */,
+				D08209951FBA651400A1A6A3 /* GymFinder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

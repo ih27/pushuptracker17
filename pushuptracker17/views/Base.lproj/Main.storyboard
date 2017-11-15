@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zx3-9S-qzV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zx3-9S-qzV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,13 +14,13 @@
         <!--Push Up Tracker-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pushuptracker17" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MenuViewController" customModule="pushuptracker17" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="unw-ZB-V7S">
-                                <rect key="frame" x="100.5" y="276" width="174" height="115.5"/>
+                                <rect key="frame" x="100.5" y="253.5" width="174" height="160.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRl-1e-MIB">
                                         <rect key="frame" x="14" y="0.0" width="146" height="40"/>
@@ -38,11 +39,21 @@
                                             <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="N62-jV-qWa" kind="show" id="JOd-Vc-Xnq"/>
+                                            <segue destination="N62-jV-qWa" kind="show" identifier="scoresSegue" id="JOd-Vc-Xnq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvQ-nH-85o">
+                                        <rect key="frame" x="29.5" y="90" width="115" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="Gym Finder">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="jkO-Ac-uLQ" kind="show" id="yDB-KX-LhM"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pushup Record: 25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7et-e7-zoV">
-                                        <rect key="frame" x="0.0" y="90" width="174" height="25.5"/>
+                                        <rect key="frame" x="0.0" y="135" width="174" height="25.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -71,9 +82,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Push Up Tracker" id="dNc-nE-TQU"/>
+                    <navigationItem key="navigationItem" title="Push Up Tracker" id="dNc-nE-TQU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="sCB-fn-upf">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="BYZ-38-t0r" id="D08-bK-bkg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="pushUpRecord" destination="7et-e7-zoV" id="Acn-6w-oW8"/>
+                        <outlet property="recordLabel" destination="7et-e7-zoV" id="fV3-6H-rnM"/>
                         <segue destination="gZt-ca-chS" kind="show" identifier="pushUpSegue" id="95A-Tf-Uyr"/>
                     </connections>
                 </viewController>
@@ -81,21 +98,37 @@
             </objects>
             <point key="canvasLocation" x="-420" y="106.59670164917542"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Scores Table View Controller-->
         <scene sceneID="2Zz-jf-czU">
             <objects>
-                <tableViewController id="N62-jV-qWa" sceneMemberID="viewController">
+                <tableViewController id="N62-jV-qWa" customClass="ScoresTableViewController" customModule="pushuptracker17" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SHd-Bs-UDx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Q6F-SB-p8x">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreCell" textLabel="egB-aP-OSG" detailTextLabel="fGt-fO-cgf" style="IBUITableViewCellStyleSubtitle" id="Q6F-SB-p8x">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q6F-SB-p8x" id="emm-Nu-DoN">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="egB-aP-OSG">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fGt-fO-cgf">
+                                            <rect key="frame" x="16" y="25.5" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -107,7 +140,74 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pu-yH-iom" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="273" y="-205"/>
+            <point key="canvasLocation" x="913" y="-134"/>
+        </scene>
+        <!--Gyms Table View Controller-->
+        <scene sceneID="f20-hp-pc2">
+            <objects>
+                <tableViewController id="jkO-Ac-uLQ" customClass="GymsTableViewController" customModule="pushuptracker17" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qlr-xw-zTh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gymCell" id="qW6-AQ-mdp" customClass="GymTableViewCell" customModule="pushuptracker17" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qW6-AQ-mdp" id="ktd-97-QhZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4ZG-JA-0tT">
+                                            <rect key="frame" x="5" y="3.5" width="326" height="36.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lerner Health &amp; Wellness Center" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc4-4T-HEQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="248.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23rd Str, Washington, DC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXl-a3-vO3">
+                                                    <rect key="frame" x="0.0" y="20.5" width="154" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Z7-pH-nwy">
+                                            <rect key="frame" x="336" y="5" width="34" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="34" id="gHz-s2-Kww"/>
+                                                <constraint firstAttribute="width" secondItem="3Z7-pH-nwy" secondAttribute="height" multiplier="1:1" id="mve-Hd-PuN"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="3Z7-pH-nwy" secondAttribute="trailing" constant="5" id="82R-xi-qzp"/>
+                                        <constraint firstItem="4ZG-JA-0tT" firstAttribute="centerY" secondItem="ktd-97-QhZ" secondAttribute="centerY" id="8a9-Hx-u4G"/>
+                                        <constraint firstItem="3Z7-pH-nwy" firstAttribute="top" secondItem="ktd-97-QhZ" secondAttribute="top" constant="5" id="AtM-7I-ySz"/>
+                                        <constraint firstAttribute="bottom" secondItem="3Z7-pH-nwy" secondAttribute="bottom" constant="5" id="Fpq-m7-Ad5"/>
+                                        <constraint firstItem="3Z7-pH-nwy" firstAttribute="leading" secondItem="4ZG-JA-0tT" secondAttribute="trailing" constant="5" id="GIo-pF-BtF"/>
+                                        <constraint firstItem="4ZG-JA-0tT" firstAttribute="leading" secondItem="ktd-97-QhZ" secondAttribute="leading" constant="5" id="wku-OP-UjS"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="gymAddressLabel" destination="GXl-a3-vO3" id="TNn-AW-JME"/>
+                                    <outlet property="gymLogoImageView" destination="3Z7-pH-nwy" id="lj2-Dv-9ZG"/>
+                                    <outlet property="gymNameLabel" destination="Yc4-4T-HEQ" id="xfJ-mT-OnA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jkO-Ac-uLQ" id="3Nl-dd-BOB"/>
+                            <outlet property="delegate" destination="jkO-Ac-uLQ" id="fpq-Vq-a6u"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1r-ZV-cVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240.80000000000001" y="-591.45427286356824"/>
         </scene>
         <!--Push Up View Controller-->
         <scene sceneID="c0O-LH-aPS">
